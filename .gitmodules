@@ -1,0 +1,3 @@
+[submodule "recipes-backend-app"]
+	path = recipes-backend-app
+	url = https://github.com/jasael/recipes-backend-app.git
