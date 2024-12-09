@@ -1,0 +1,37 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../recipes-frontend-app:/workspace:cached
+    command: sleep infinity
+    depends_on:
+      - backend
+    ports:
+      - 3000:3000
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../recipes-backend-app:/workspace:cached
+    command: sleep infinity
+    depends_on:
+      - database
+    ports:
+      - 3001:3000
+
+  database:
+    image: postgres:17.2-alpine3.20
+    volumes:
+      - recipes-database-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - 5432:5432
+volumes:
+  recipes-database-data:

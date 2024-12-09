@@ -1,0 +1,20 @@
+{
+  "name": "recipes-backend-app",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "backend",
+  "workspaceFolder": "/workspace",
+  "shutdownAction": "stopCompose",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Supermaven.supermaven",
+        "usernamehw.errorlens",
+        "YoavBls.pretty-ts-errors",
+        "ChakrounAnas.turbo-console-log",
+        "pflannery.vscode-versionlens",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  }
+}
